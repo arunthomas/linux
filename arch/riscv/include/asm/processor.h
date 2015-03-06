@@ -80,6 +80,7 @@ static inline void cpu_relax(void)
 	__asm__ __volatile__ ("div %0, %0, zero" : "=r" (dummy));
 	barrier();
 }
+#define cpu_relax_lowlatency() cpu_relax()
 
 #endif /* __ASSEMBLY__ */
 
